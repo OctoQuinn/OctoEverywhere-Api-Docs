@@ -23,7 +23,7 @@ An App Connection is a 3rd party app integration with OctoEverywhere that allows
 
 Note that the experience is optimized for mobile / tablet layouts.
 
-#### A High Level User Experance
+#### A High Level User Experience
 1) A user of your app want's to setup a remote connection to their printer with OctoEverywhere.
 2) The user sees an in-app web view of the OctoEverywhere App Connection Portal
     1) The user sees a welcome message

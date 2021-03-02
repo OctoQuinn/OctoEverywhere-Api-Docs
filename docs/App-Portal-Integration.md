@@ -1,12 +1,12 @@
 # App Connection Portal Integration
 
-Check out the [App Connection Overview](App-Connection-Overview.md) page for an overview of the entire system. 
+Check out the [App Connection Overview](App-Connection-Overview.md) page for an overview of the App Connection entire system. 
 
-The App Connection portal has the following goals:
+The App Connection Portal has the following goals:
 
 1)	Be a great and easy experience for users.
 2)	Be an easy and complete app developer integration tool.
-3)	Be robust and complete, able to handle all types user scenarios.
+3)	Be robust and complete - able to handle all types user scenarios.
 
 
 ### A Few Important Notes
@@ -22,7 +22,7 @@ The App Connection portal has the following goals:
 
 ### Starting An App Connection Portal
 
-To start a portal, you should open an in app web view and navigate to the following URL with the required and optiaonl GET parameters.
+To start a portal, you should open an in app web view and navigate to the following URL with the required and optiaonl GET parameters:
 https://octoeverywhere.com/appportal/v1/
 
 All of the required and optional GET parameters can be found in the [API doc for Starting An App Portal.](../reference/App-Connection.v1.yaml/paths/~1appportal~1v1/get)
