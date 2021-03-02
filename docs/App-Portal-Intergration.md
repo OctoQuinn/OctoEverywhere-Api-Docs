@@ -16,4 +16,8 @@ With this intergration flow, we try to address all of these secnarios. Let's dis
 
 ##### Who Already Have OctoEverywher Setup
 
+#### authType
+
+Info abobut hte auth type
+
 Users might discovered your app either from the OctoEverywhere set

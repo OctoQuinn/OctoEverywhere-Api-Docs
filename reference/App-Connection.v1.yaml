@@ -3,201 +3,99 @@ info:
   title: App Connection Portal
   version: '1.0'
   description: 'For an overview and details on the app connection portal, see the [App Connection Overview page](../docs/App-Connection-Overview.md).'
-servers: []
+servers:
+  - url: 'https://octoeverywhere.com'
 paths:
-  '/users/{userId}':
-    parameters:
-      - schema:
-          type: integer
-        name: userId
-        in: path
-        required: true
-        description: Id of an existing user.
+  /appportal/v1:
+    parameters: []
     get:
-      summary: Get User Info by User ID
+      summary: Start An App Portal
       tags: []
-      responses:
-        '200':
-          description: User Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-              examples:
-                Get User Alice Smith:
-                  value:
-                    id: 142
-                    firstName: Alice
-                    lastName: Smith
-                    email: alice.smith@gmail.com
-                    dateOfBirth: '1997-10-31'
-                    emailVerified: true
-                    signUpDate: '2019-08-24'
-        '404':
-          description: User Not Found
       operationId: get-users-userId
-      description: Retrieve the information of the user with the matching user ID.
-    patch:
-      summary: Update User Information
-      operationId: patch-users-userId
+      description: |-
+        This is the page your app will navigate to to start the App Connection portal process.
+
+        For details on the page and all of the GET parameters, see the [App Portal Intergration](../docs/App-Portal-Intergration.md) page.
+      parameters:
+        - schema:
+            type: string
+          in: query
+          name: appId
+          description: The OctoEverywhere assigned id for your app.
+          required: true
+        - schema:
+            type: string
+          in: query
+          name: authType
+          description: The authentication type you want the app connection to use
+          required: true
+        - schema:
+            type: string
+            default: 'http://octoeverywhere.com/appportal/v1/complete'
+          in: query
+          name: returnUrl
+          description: 'If specified, this is the final URL the system will navigate to on completion or failure; with all of the resulting GET parameters.'
+        - schema:
+            type: string
+          in: query
+          name: printerId
+          description: ' If specified, this is the user''s OctoEverywhere Printer ID they are trying to connect to.'
       responses:
         '200':
-          description: User Updated
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-              examples:
-                Updated User Rebecca Baker:
-                  value:
-                    id: 13
-                    firstName: Rebecca
-                    lastName: Baker
-                    email: rebecca@gmail.com
-                    dateOfBirth: '1985-10-02'
-                    emailVerified: false
-                    createDate: '2019-08-24'
-        '404':
-          description: User Not Found
-        '409':
-          description: Email Already Taken
-      description: Update the infromation of an existing user.
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                firstName:
-                  type: string
-                lastName:
-                  type: string
-                email:
-                  type: string
-                  description: 'If a new email is given, the user''s email verified property will be set to false.'
-                dateOfBirth:
-                  type: string
-            examples:
-              Update First Name:
-                value:
-                  firstName: Rebecca
-              Update Email:
-                value:
-                  email: rebecca@gmail.com
-              Update Last Name & Date of Birth:
-                value:
-                  lastName: Baker
-                  dateOfBirth: '1985-10-02'
-        description: Patch user properties to update.
-  /user:
-    post:
-      summary: Create New User
-      operationId: post-user
-      responses:
-        '200':
-          description: User Created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-              examples:
-                New User Bob Fellow:
-                  value:
-                    id: 12
-                    firstName: Bob
-                    lastName: Fellow
-                    email: bob.fellow@gmail.com
-                    dateOfBirth: '1996-08-24'
-                    emailVerified: false
-                    createDate: '2020-11-18'
-        '400':
-          description: Missing Required Information
-        '409':
-          description: Email Already Taken
-      requestBody:
-        content:
-          application/json:
-            schema:
-              type: object
-              properties:
-                firstName:
-                  type: string
-                lastName:
-                  type: string
-                email:
-                  type: string
-                dateOfBirth:
-                  type: string
-                  format: date
-              required:
-                - firstName
-                - lastName
-                - email
-                - dateOfBirth
-            examples:
-              Create User Bob Fellow:
-                value:
-                  firstName: Bob
-                  lastName: Fellow
-                  email: bob.fellow@gmail.com
-                  dateOfBirth: '1996-08-24'
-        description: Post the necessary fields for the API to create a new user.
-      description: Create a new user.
+          description: The App Connection portal has started successfully.
+  /appportal/v1/complete:
+    get:
+      summary: Your GET endpoint
+      tags: []
+      responses: {}
+      operationId: get-appportal-v1-complete
+      description: |-
+        Unless otherwiwse specified, this is the URL that the portal will navigate to when the process is completed or has failed. If your app specifies a different return URL, these same GET parameters will be called on specified return URL.
+
+        Note that the `appApiToken` and `auth*` parameters will only be given to your app once and aren't queryable again via the OctoEverywhere APIs. If they are lost, you must create a new App Connection.
+
+        For full details on the complete page and all of the GET parameters, see the [App Portal Intergration](../docs/App-Portal-Intergration.md) page.
+      parameters:
+        - schema:
+            type: boolean
+          in: query
+          name: success
+          description: Indicates if the App Connection was successful or not.
+        - schema:
+            type: string
+          in: query
+          name: id
+          description: The new App Connection's ID
+        - schema:
+            type: string
+          in: query
+          name: url
+          description: The new App Connections root URL
+        - schema:
+            type: string
+          in: query
+          name: 'appApiToken '
+          description: The API token your app can use to access the OctoEverywhere APIs for this App Connection.
+        - schema:
+            type: string
+          in: query
+          name: authBasicHttpUser
+          description: 'If authType=''basic'', this is the generated http basic auth user name.'
+        - schema:
+            type: string
+          in: query
+          name: 'authBasicHttpPassword '
+          description: 'If authType=''basic'', this is the generated http basic auth password.'
+        - schema:
+            type: string
+          in: query
+          name: 'authBearerToken '
+          description: 'If authType=''bearer'', this is the generated bearer token.'
 components:
-  schemas:
-    User:
-      title: User
-      type: object
-      description: ''
-      x-examples:
-        Alice Smith:
-          id: 142
-          firstName: Alice
-          lastName: Smith
-          email: alice.smith@gmail.com
-          dateOfBirth: '1997-10-31'
-          emailVerified: true
-          signUpDate: '2019-08-24'
-      properties:
-        id:
-          type: integer
-          description: Unique identifier for the given user.
-        firstName:
-          type: string
-        lastName:
-          type: string
-        email:
-          type: string
-          format: email
-        dateOfBirth:
-          type: string
-          format: date
-          example: '1997-10-31'
-        emailVerified:
-          type: boolean
-          description: Set to true if the user's email has been verified.
-        createDate:
-          type: string
-          format: date
-          description: The date that the user was created.
-      required:
-        - id
-        - firstName
-        - lastName
-        - email
-        - emailVerified
+  schemas: {}
   securitySchemes:
     AppToken:
       name: API Key
       type: apiKey
       in: header
-  examples:
-    test:
-      value:
-        description: Example shared example
-        type: object
-        properties:
-          id:
-            type: string
-        required:
-          - id
+  examples: {}
