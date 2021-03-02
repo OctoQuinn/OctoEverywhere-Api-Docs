@@ -2,7 +2,7 @@ openapi: 3.0.0
 info:
   title: App Connection Portal
   version: '1.0'
-  description: 'For an overview and details on the app connection portal, see the [App Connection Overview page](../App%20Connection%20Overview.md).'
+  description: 'For an overview and details on the app connection portal, see the [App Connection Overview page](../docs/App%20Connection%20Overview.md).'
 servers: []
 paths:
   '/users/{userId}':

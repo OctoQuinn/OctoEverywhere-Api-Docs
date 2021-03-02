@@ -54,7 +54,7 @@ There's one intergration you need to do and one intergration that's optional.
 
 #### Step 1 - Intergrate the Portal
 
-For all-of-the-details-you-could-ever-want about the portal intergration, go here.
+For all-of-the-details-you-could-ever-want about the portal intergration, [start here](App Portal Intergration.md).
 
 #### Step 2 - (optional) - Intergrate with OctoEverywhere APIs
 
