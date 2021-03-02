@@ -15,10 +15,10 @@ paths:
       description: |
         This is the page your app will navigate to to start the App Connection portal process.
 
-        #### appId
+        #### **appId**
         The App ID is a string that's assigned to your app by OctoEverywhere. This is used to track which App Connections are created by which apps, and also used to add your app name to the UI. Please contact Quinn if you need an App ID assigned. 
 
-        #### authType
+        #### **authType**
         The authentication type determines what type of auth will be required for this app connection. Authentication types are discussed on the [App Connection Overview](../docs/App-Connection-Overview.md) page. There are two valid values:
 
         1) `basic`
@@ -26,7 +26,7 @@ paths:
         2) `enhanced`
             1) **RECOMENDED** - The App Connection will require a http auth header with either http basic or a bearer token forall http and websocket connections.
 
-        #### printerId
+        #### **printerId**
 
         If specified, this is the OctoEverywhere Printer ID the user is trying to connect to.
 
@@ -34,7 +34,7 @@ paths:
 
         If your app has local access to the printer already, you can query the Printer ID from the OctoEverywhere OctoPrint plugin. Simply make a GET request to `http://<local OctoPrint IP>/api/plugin/octoeverywhere` and parse the resulting JSON.
 
-        #### returnUrl
+        #### **returnUrl**
 
         If specified, the URL-encoded return URL will overwrite the default return URL. The return url is the page the portal will navigate to when either the process completed or ended in an error. The returned GET parameters will be appended on the end of the URL.
       parameters:
@@ -75,7 +75,7 @@ paths:
 
         Note that the `appApiToken` and `auth*` parameters will only be given to your app once and aren't queryable again via the OctoEverywhere APIs. If they are lost, you must create a new App Connection.
 
-        For full details on the complete page and all of the GET parameters, see the [App Portal Integration](../docs/App-Portal-Integration.md) page.
+        #### TODO add details for arguments that need it
       parameters:
         - schema:
             type: boolean
