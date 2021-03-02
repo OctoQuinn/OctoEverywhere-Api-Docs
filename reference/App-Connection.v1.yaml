@@ -1,13 +1,8 @@
 openapi: 3.0.0
 info:
-  title: App Connection
+  title: App Connection Portal
   version: '1.0'
-  description: |-
-    # This is a test
-
-    jklfajfklda
-
-    dfajksld
+  description: 'For an overview and details on the app connection portal, see the [App Connection Overview page](https://octoeverywhere.stoplight.io/docs/octoeverywhere-api-docs/docs/App%20Connection%20Overview.md).'
 servers: []
 paths:
   '/users/{userId}':
