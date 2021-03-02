@@ -29,6 +29,17 @@ https://octoeverywhere.com/appportal/v1/
 
 For types and syntax of the GET parameters, see [this API doc](../reference/App-Connection.v1.yaml/paths/~1appportal~1v1/get)
 
+#### Portal Starting Page GET Parameters
+
+#### appId
+The App ID is a string that's assinged to your app by OctoEverywhere. This is used to track which App Connections are created by which apps, and also used to add your app name to the UI. Please contact Quinn if you need an App ID assinged. 
+
+#### authType
+The authenciation type determins what type of auth will be required for this app connection. There are three possible values of which you can choose one.
+
+1) `none`
+    1) **NOT RECOMENDED** - Should only be used if you can't support basic http auth or a bearer token.
+
 Example: https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=none
 
 The types 
