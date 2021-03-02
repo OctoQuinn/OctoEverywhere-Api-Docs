@@ -31,7 +31,7 @@ Note that the experience is optimized for mobile / tablet layouts.
           1) If the user doesn't have an OctoEveywhere account... the portal will help them create one.
           2) If the user doesn't have a printer connected to OctoEverywhere... the portal will walk them through the 2 minute setup.
           3) If the user isn't an OctoEverywhere supporter... the portal will describe why a supporter role is required (for now) and will help them upgrade if they desire.
-    5) The user confirms the pritner they want to connect to and authorizes the app to connect.
+    5) The user confirms the printer they want to connect to and authorizes the app to connect.
 6) The web portal closes and the user can now use the full app from anywhere!
 
 #### A High Level Example App Integration
@@ -67,15 +67,13 @@ This entire thing was created for you, the developer, to make your life easier. 
 
 ### Sounds Great! Let's Integrate!
 
-There's one integration  you need to do and one integration  that's optional.
+#### Step 1 - Integrate the Portal
 
-#### Step 1 - Intergrate the Portal
+For all-of-the-details-you-could-ever-want about the portal integration, [look here](App-Portal-Integration.md).
 
-For all-of-the-details-you-could-ever-want about the portal integration , [start here](App-Portal-Integration.md).
-
-#### Step 2 - (optional) - Intergrate with OctoEverywhere APIs
+#### Step 2 - (optional) - Integrate with OctoEverywhere APIs
 
 The OctoEverywhere App APIs give you access to real-time details for a printer once it has been setup via the portal. This information can be used to make sure the App Connection is still valid, check if the printer is connected to OctoEverywhere, get the printer's local IP address, and get user usage limits. 
  
-For all-of-the-details-you-could-ever-want about the poral integration , [start here](App-OctoEverywhere-API.md).
+For all-of-the-details-you-could-ever-want about the poral integration, [look here](App-OctoEverywhere-API.md).
 
