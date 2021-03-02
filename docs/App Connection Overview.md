@@ -23,21 +23,42 @@ An App Connection is a 3rd party app integration with OctoEverywhere that allows
 
 Note that the experance is optimzied for mobile / tablet layouts.
 
-### Cool Right? Let's Talk Intergration!
 
-There are a few basic user states to consider:
+#### A High Level Example App Intergration/Flow
+1) A user of your app want's to setup a remote connection to their printer with OctoEverywhere.
+2) Your app opens a in-app web view and navigates to the OctoEverywhere App portal URL.
+3) The OctoEverywhere Portal will handle...
+   1) Show the user a biref welcome message
+   2) Optional flows depending on the user's state:
+      1) If the user doesn't have an OctoEveywhere account... the portal will help them create one.
+      2) If the user doesn't have a printer conneted to OctoEverywhere... the portal will walk them through the 2 minute setup.
+      3) If the user isn't an OctoEverywhere supporter... the portal will describe why a supporter role is required (for now) and will help them upgrade if they desire.
+   3) The portal will show a message allowing the user to confirm which printer they want to connect and asking the user to authorize and finish the connection.
+4) The conneciton will be created and the details will be passed back to the app as GET parameters on the requested final URL.
+5) Your app reads the parameters, sets the correct remote hostname, optionally set the correct authenction systems, and is done!
 
-- Users Who Are New To Your App
-  - User's who have OctoEverywhere setup already
-  - User's who don't have OctoEverwhere setup already
-- Extisting Users Of Your App
-  - User's who have OctoEverywhere setup already
-  - User's who don't have OctoEverwhere setup already
+### App Connection Life Cycle
 
-With this intergration flow, we try to address all of these secnarios. Let's discuss each.
+An App Connection is created when a portal flow is successful. The credentails and context of an App Connections gives your app access to only a single printer for a given user. If a user want's set up multipe printers, they will all be unique sets of App Connection contexts.
 
-#### Users Who Are New To Your App
+Once created, an App Connection context and credentails remain valid until:
+1) The user deletes their OctoEverywhere account.
+2) The user removes the printer from their account.
+3) The user revokes the App Connection from the OctoEverywhere website.
 
-##### Who Already Have OctoEverywher Setup
+You can use the OctoEverywhere APIs described below to query OctoEverywhere for the state an App Connection at anytime.
 
-Users might discovered your app either from the OctoEverywhere set
+### Sounds Great! Let's Integrate!
+
+There's one intergration you need to do and one intergration that's optional.
+
+#### Step 1 - Intergrate the Portal
+
+For all-of-the-details-you-could-ever-want about the portal intergration, go here.
+
+#### Step 2 - (optional) - Intergrate with OctoEverywhere APIs
+
+The OctoEverywhere App APIs give you access to realtime details for a printer once it has been setup via the portal. This information can be used to make sure the App Connection is still valid, check if the pritner is connected to OctoEverywhere, get the printer's local IP addreess, and get user usage limits. 
+ 
+For all-of-the-details-you-could-ever-want about the poral intergration, go here.
+
