@@ -40,7 +40,7 @@ The authenciation type determins what type of auth will be required for this app
 1) `none`
     1) **NOT RECOMENDED** - Should only be used if you can't support basic http auth or a bearer token.
 
-Example: https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=none
+Example: https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=basic
 
 The types 
 
