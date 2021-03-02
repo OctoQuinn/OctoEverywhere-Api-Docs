@@ -15,7 +15,7 @@ paths:
       description: |-
         This is the page your app will navigate to to start the App Connection portal process.
 
-        For details on the page and all of the GET parameters, see the [App Portal Intergration](../docs/App-Portal-Intergration.md) page.
+        For details on the page and all of the GET parameters, see the [App Portal Integration](../docs/App-Portal-Integration.md) page.
       parameters:
         - schema:
             type: string
@@ -54,7 +54,7 @@ paths:
 
         Note that the `appApiToken` and `auth*` parameters will only be given to your app once and aren't queryable again via the OctoEverywhere APIs. If they are lost, you must create a new App Connection.
 
-        For full details on the complete page and all of the GET parameters, see the [App Portal Intergration](../docs/App-Portal-Intergration.md) page.
+        For full details on the complete page and all of the GET parameters, see the [App Portal Integration](../docs/App-Portal-Integration.md) page.
       parameters:
         - schema:
             type: boolean
