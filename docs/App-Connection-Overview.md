@@ -23,19 +23,24 @@ An App Connection is a 3rd party app integration with OctoEverywhere that allows
 
 Note that the experience is optimized for mobile / tablet layouts.
 
-
-#### A High Level Example App Integration/Flow
+#### A High Level User Experance
 1) A user of your app want's to setup a remote connection to their printer with OctoEverywhere.
-2) Your app opens a in-app web view and navigates to the OctoEverywhere App portal URL.
-3) The OctoEverywhere Portal will handle...
-   1) Show the user a brief welcome message
-   2) Optional flows depending on the user's state:
-      1) If the user doesn't have an OctoEveywhere account... the portal will help them create one.
-      2) If the user doesn't have a printer connected to OctoEverywhere... the portal will walk them through the 2 minute setup.
-      3) If the user isn't an OctoEverywhere supporter... the portal will describe why a supporter role is required (for now) and will help them upgrade if they desire.
-   3) The portal will show a message allowing the user to confirm which printer they want to connect and asking the user to authorize and finish the connection.
-4) The connection will be created and the details will be passed back to the app as GET parameters on the requested final URL.
-5) Your app reads the parameters, sets the correct remote hostname, optionally set the correct authentication systems, and is done!
+2) The user sees an in-app web view of the OctoEverywhere App Connection Portal
+    1) The user sees a welcome message
+    2) Optional flows depending on the user's state:
+          1) If the user doesn't have an OctoEveywhere account... the portal will help them create one.
+          2) If the user doesn't have a printer connected to OctoEverywhere... the portal will walk them through the 2 minute setup.
+          3) If the user isn't an OctoEverywhere supporter... the portal will describe why a supporter role is required (for now) and will help them upgrade if they desire.
+    5) The user confirms the pritner they want to connect to and authorizes the app to connect.
+6) The web portal closes and the user can now use the full app from anywhere!
+
+#### A High Level Example App Integration
+1) A user of your app want's to setup a remote connection to their printer with OctoEverywhere.
+2) Your app opens a in-app web view and navigates to the OctoEverywhere App portal starting URL.
+    1) Your app passes a few GET parameters to setup the App Connection portal
+3) Your app watches the navigations of the web view until the portal navigates to the completion URL.
+4) Your app reads the returned GET parameters from the completion URL
+5) Your app uses the returned base URL to connect to the printer from anywhere!
 
 ### App Connection Life Cycle
 
