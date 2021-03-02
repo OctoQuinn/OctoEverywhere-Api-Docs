@@ -12,7 +12,7 @@ paths:
       tags: []
       responses:
         '200':
-          description: User Found
+          description: The App Connection is valid and the current information has been returned.
           content:
             application/json:
               schema:
@@ -27,10 +27,22 @@ paths:
                     dateOfBirth: '1997-10-31'
                     emailVerified: true
                     signUpDate: '2019-08-24'
+        '400':
+          description: The App Token was missing from the body or header.
         '404':
-          description: User Not Found
+          description: 'The App Connection is no longer valid or never existed. This can happen if the user deletes the printer from their account, deletes their account, revokes the App Connection, or downgrades from a supporter role.'
       operationId: get-users-userId
-      description: Retrieve the information of the user with the matching user ID.
+      description: |-
+        To get information about an App Connection, you must set the `AppToken` header with the API Token returned from the App Connection Portal.
+
+        To figure out the App Connection and printer's state, you can use a combination of the API return type as well as the `IsOnline` flag in the resposne body. 
+      parameters:
+        - schema:
+            type: string
+          in: header
+          name: AppToken
+          description: The App Connection API Token
+          required: true
 components:
   schemas:
     User:

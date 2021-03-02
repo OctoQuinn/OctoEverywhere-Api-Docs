@@ -50,6 +50,7 @@ Once created, an App Connection context and credentials remain valid until:
 1) The user deletes their OctoEverywhere account.
 2) The user removes the printer from their account.
 3) The user revokes the App Connection from the OctoEverywhere website.
+4) The user's account downgrades from being a supporter.
 
 You can use the OctoEverywhere APIs described below to query OctoEverywhere for the state an App Connection at anytime.
 
