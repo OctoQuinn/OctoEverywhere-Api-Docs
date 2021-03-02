@@ -27,25 +27,20 @@ The App Connection portal has the following goals:
 To start a portal, you should open an in app web view and navigate to the following URL with the required and optiaonl GET parameters.
 https://octoeverywhere.com/appportal/v1/
 
-For types and syntax of the GET parameters, see [this API doc](../reference/App-Connection.v1.yaml/paths/~1appportal~1v1/get)
-
-#### Portal Starting Page GET Parameters
-
-#### appId
-The App ID is a string that's assinged to your app by OctoEverywhere. This is used to track which App Connections are created by which apps, and also used to add your app name to the UI. Please contact Quinn if you need an App ID assinged. 
-
-#### authType
-The authenciation type determins what type of auth will be required for this app connection. There are three possible values of which you can choose one.
-
-1) `none`
-    1) **NOT RECOMENDED** - Should only be used if you can't support basic http auth or a bearer token.
+All of the required and optional GET parameters can be found in the [API doc for Starting An App Portal.](../reference/App-Connection.v1.yaml/paths/~1appportal~1v1/get)
 
 Example: https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=basic
 
-The types 
+### Handling Portal Completion
+
+On successful or failure completion, the portal will navigate to `appportal/v1/complete` or the specified `returnUrl` with the resulting GET parameters. Your app should monitor the web view's navigation and when it sees the completion URL handle the portal result.
+
+All of the return GET parameters can be found in the [API doc for the App Portal Completion URL.](../reference/App-Connection.v1.yaml/paths/~1appportal~1v1/get)
 
 
-### Cool Right? Let's Talk Intergration!
+
+
+<!-- ### Cool Right? Let's Talk Intergration!
 
 There are a few basic user states to consider:
 
@@ -55,15 +50,4 @@ There are a few basic user states to consider:
 - Extisting Users Of Your App
   - User's who have OctoEverywhere setup already
   - User's who don't have OctoEverwhere setup already
-
-With this intergration flow, we try to address all of these secnarios. Let's discuss each.
-
-#### Users Who Are New To Your App
-
-##### Who Already Have OctoEverywher Setup
-
-#### authType
-
-Info abobut hte auth type
-
-Users might discovered your app either from the OctoEverywhere set
+ -->

@@ -77,5 +77,5 @@ For all-of-the-details-you-could-ever-want about the portal integration , [start
 
 The OctoEverywhere App APIs give you access to real-time details for a printer once it has been setup via the portal. This information can be used to make sure the App Connection is still valid, check if the printer is connected to OctoEverywhere, get the printer's local IP address, and get user usage limits. 
  
-For all-of-the-details-you-could-ever-want about the poral integration , go here.
+For all-of-the-details-you-could-ever-want about the poral integration , [start here](App-OctoEverywhere-API.md).
 
