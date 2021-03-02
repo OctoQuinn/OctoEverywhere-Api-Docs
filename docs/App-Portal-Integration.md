@@ -1,7 +1,5 @@
 # App Connection Portal Integration
 
-### Overview
-
 Check out the [App Connection Overview](App-Connection-Overview.md) page for an overview of the entire system. 
 
 The App Connection portal has the following goals:
@@ -37,8 +35,7 @@ On successful or failure completion, the portal will navigate to `appportal/v1/c
 
 All of the return GET parameters can be found in the [API doc for the App Portal Completion URL.](../reference/App-Connection.v1.yaml/paths/~1appportal~1v1/get)
 
-
-
+Remember that the `appApiToken` and `auth*` parameters will only be returned this one time and cannot be retrieved again. If you lose them, you must make a new App Connection.
 
 <!-- ### Cool Right? Let's Talk Intergration!
 

@@ -24,7 +24,7 @@ paths:
         1) `basic`
             1) **NOT RECOMENDED** - Should only be used if you can't support basic http auth or a bearer token. An App Connection using basic auth will rely on only the unique subdomian to keep the connection secure.
         2) `enhanced`
-            1) **RECOMENDED** - The App Connection will require a http auth header with either http basic or a bearer token for all http and websocket connections.
+            1) **RECOMENDED** - The App Connection will require a http auth header with either http basic or a bearer token forall http and websocket connections.
 
         #### printerId
 
@@ -36,7 +36,7 @@ paths:
 
         #### returnUrl
 
-        If specified, the URL-encoded return URL will overwrite the default return URL. The return url is the page the portal will navigate to when either the process completed or ended in an error. The returned GET paramerts will be appeneded on the end of the URL.
+        If specified, the URL-encoded return URL will overwrite the default return URL. The return url is the page the portal will navigate to when either the process completed or ended in an error. The returned GET parameters will be appended on the end of the URL.
       parameters:
         - schema:
             type: string
