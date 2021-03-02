@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: App-Connection-API.v1
+  title: App Connection API
   version: '1.0'
 servers:
   - url: 'https://octoeverywhere.com'
