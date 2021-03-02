@@ -82,36 +82,43 @@ paths:
           in: query
           name: success
           description: Indicates if the App Connection was successful or not.
+          required: true
         - schema:
             type: string
           in: query
           name: id
           description: The new App Connection's ID
+          required: true
         - schema:
             type: string
           in: query
           name: url
           description: The new App Connections root URL
+          required: true
         - schema:
             type: string
           in: query
           name: 'appApiToken '
           description: The API token your app can use to access the OctoEverywhere APIs for this App Connection.
+          required: true
         - schema:
             type: string
           in: query
           name: authBasicHttpUser
           description: 'If authType=''enhanced'', this is the generated http basic auth user name.'
+          required: true
         - schema:
             type: string
           in: query
           name: 'authBasicHttpPassword '
           description: 'If authType=''enhanced'', this is the generated http basic auth password.'
+          required: true
         - schema:
             type: string
           in: query
           name: 'authBearerToken '
           description: 'If authType=''enhanced'', this is the generated bearer token.'
+          required: true
 components:
   schemas: {}
   securitySchemes:
