@@ -2,8 +2,8 @@ openapi: 3.0.0
 info:
   title: App Connection
   version: '1.0'
-servers:
-  - url: 'http://localhost:3000'
+  description: fdafd
+servers: []
 paths:
   '/users/{userId}':
     parameters:
@@ -186,3 +186,18 @@ components:
         - lastName
         - email
         - emailVerified
+  securitySchemes:
+    AppToken:
+      name: API Key
+      type: apiKey
+      in: header
+  examples:
+    test:
+      value:
+        description: Example shared example
+        type: object
+        properties:
+          id:
+            type: string
+        required:
+          - id
