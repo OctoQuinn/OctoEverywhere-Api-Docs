@@ -1,4 +1,4 @@
-# App Connection Portal Integration
+# App Connection Portal
 
 Check out the [App Connection Overview](App-Connection-Overview.md) page for an overview of the App Connection entire system. 
 
@@ -7,6 +7,32 @@ The App Connection Portal has the following goals:
 1)	Be a great and easy experience for users.
 2)	Be an easy and complete app developer integration tool.
 3)	Be robust and complete - able to handle all types user scenarios.
+
+### Cool! What does it look like?
+
+[Give it a try!](https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=none) 
+
+**Note:** The experience is optimized for mobile / tablet layouts.
+
+#### A High Level User Experience
+1) A user of your app want's to setup a remote connection to their printer with OctoEverywhere.
+2) The user sees an in-app web view of the OctoEverywhere App Connection Portal
+    1) The user sees a welcome message
+    2) Optional flows depending on the user's state:
+          1) If the user doesn't have an OctoEveywhere account... the portal will help them create one.
+          2) If the user doesn't have a printer connected to OctoEverywhere... the portal will walk them through the 2 minute setup.
+          3) If the user isn't an OctoEverywhere supporter... the portal will describe why a supporter role is required (for now) and will help them upgrade if they desire.
+    5) The user confirms the printer they want to connect to and authorizes the app to connect.
+6) The web portal closes and the user can now use the full app from anywhere!
+
+#### A High Level Example App Integration
+1) A user of your app want's to setup a remote connection to their printer with OctoEverywhere.
+2) Your app opens a in-app web view and navigates to the OctoEverywhere App portal starting URL.
+    1) Your app passes a few GET parameters to setup the App Connection portal
+3) Your app watches the navigations of the web view until the portal navigates to the completion URL.
+4) Your app reads the returned GET parameters from the completion URL
+5) Your app uses the returned base URL to connect to the printer from anywhere!
+
 
 
 ### A Few Important Notes

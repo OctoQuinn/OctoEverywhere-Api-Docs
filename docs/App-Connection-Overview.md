@@ -17,30 +17,14 @@ An App Connection is a 3rd party app integration with OctoEverywhere that allows
 -	A full secure managed connection to OctoPrint. You can choose domain name security, basic http auth, or Bearer tokens for added security. 
 -	OctoEverywhere app APIs that allow you to query information about the printer from OctoEverywhere, including it’s current local IP, it’s connection state to OctoEverywhere, and the user’s current limits.
 
-### Cool! What does it look like?
+### What Options Do I Have For Integration?
 
-[Give it a try!](https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=none) 
+App Connections currently offer four integration points:
 
-Note that the experience is optimized for mobile / tablet layouts.
-
-#### A High Level User Experience
-1) A user of your app want's to setup a remote connection to their printer with OctoEverywhere.
-2) The user sees an in-app web view of the OctoEverywhere App Connection Portal
-    1) The user sees a welcome message
-    2) Optional flows depending on the user's state:
-          1) If the user doesn't have an OctoEveywhere account... the portal will help them create one.
-          2) If the user doesn't have a printer connected to OctoEverywhere... the portal will walk them through the 2 minute setup.
-          3) If the user isn't an OctoEverywhere supporter... the portal will describe why a supporter role is required (for now) and will help them upgrade if they desire.
-    5) The user confirms the printer they want to connect to and authorizes the app to connect.
-6) The web portal closes and the user can now use the full app from anywhere!
-
-#### A High Level Example App Integration
-1) A user of your app want's to setup a remote connection to their printer with OctoEverywhere.
-2) Your app opens a in-app web view and navigates to the OctoEverywhere App portal starting URL.
-    1) Your app passes a few GET parameters to setup the App Connection portal
-3) Your app watches the navigations of the web view until the portal navigates to the completion URL.
-4) Your app reads the returned GET parameters from the completion URL
-5) Your app uses the returned base URL to connect to the printer from anywhere!
+1) The App Connection - Gives you a secure and unique hostname to connect to your user's printer from anywhere.
+2) [The App Connection Portal](App-Portal-Integration.md) - An "OAuth style" OctoEverywhere hosted portal developers can leverage for quick and easy App Connection creation.
+3) [The App Connection OctoEverywhere APIs](App-OctoEverywhere-API.md) - A set of APIs from OctoEverywhere's service that return real-time information about the connected printer.
+4) [The OctoEverywhere OctoPrint Plugin Local API](App-Local-Plugin-API.md)  - A simple API that allows local detection of the OctoEverywhere plugin and printer information.
 
 ### App Connection Life Cycle
 
