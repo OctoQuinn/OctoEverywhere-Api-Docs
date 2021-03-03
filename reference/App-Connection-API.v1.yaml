@@ -8,7 +8,7 @@ paths:
   /api/appconnection/info:
     parameters: []
     get:
-      summary: Get User Info by User ID
+      summary: App Connection OctoEverywhere API
       tags: []
       responses:
         '200':
@@ -16,7 +16,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/User'
+                type: object
               examples:
                 Get User Alice Smith:
                   value:
@@ -29,6 +29,8 @@ paths:
                     signUpDate: '2019-08-24'
         '400':
           description: The App Token was missing from the body or header.
+        '401':
+          description: Unauthorized
         '404':
           description: 'The App Connection is no longer valid or never existed. This can happen if the user deletes the printer from their account, deletes their account, revokes the App Connection, or downgrades from a supporter role.'
       operationId: get-users-userId
@@ -44,45 +46,4 @@ paths:
           description: The App Connection API Token
           required: true
 components:
-  schemas:
-    User:
-      title: User
-      type: object
-      description: ''
-      x-examples:
-        Alice Smith:
-          id: 142
-          firstName: Alice
-          lastName: Smith
-          email: alice.smith@gmail.com
-          dateOfBirth: '1997-10-31'
-          emailVerified: true
-          signUpDate: '2019-08-24'
-      properties:
-        id:
-          type: integer
-          description: Unique identifier for the given user.
-        firstName:
-          type: string
-        lastName:
-          type: string
-        email:
-          type: string
-          format: email
-        dateOfBirth:
-          type: string
-          format: date
-          example: '1997-10-31'
-        emailVerified:
-          type: boolean
-          description: Set to true if the user's email has been verified.
-        createDate:
-          type: string
-          format: date
-          description: The date that the user was created.
-      required:
-        - id
-        - firstName
-        - lastName
-        - email
-        - emailVerified
+  schemas: {}

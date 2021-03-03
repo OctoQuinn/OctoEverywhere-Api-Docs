@@ -21,10 +21,19 @@ An App Connection is a 3rd party app integration with OctoEverywhere that allows
 
 App Connections currently offer four easy integration points:
 
-1) The App Connection - Gives you a secure and unique hostname to connect to your user's printer from anywhere.
-2) [The App Connection Portal](App-Portal-Integration.md) - An "OAuth style" OctoEverywhere hosted portal developers can leverage for quick and easy App Connection creation.
-3) [The App Connection OctoEverywhere APIs](App-OctoEverywhere-API.md) - A set of APIs from OctoEverywhere's service that return real-time information about the connected printer.
-4) [The OctoEverywhere OctoPrint Plugin Local API](App-Local-Plugin-API.md)  - A simple API that allows local detection of the OctoEverywhere plugin and printer information.
+1) App Connection 
+    1) Gives you a secure and unique hostname to connect to your user's printer from anywhere.
+2) [App Connection Portal](App-Portal-Integration.md) 
+    1) Allows app developers a easy to integrate "OAuth style" App Connection creation process.
+    2) Full hosted by OctoEveywhere providing a simple and easy user setup flow.
+3) [App Connection OctoEverywhere APIs](App-OctoEverywhere-API.md)
+    1) A set of APIs from OctoEverywhere's service that return real-time information about the connected printer.
+    2) Provides the connection status of the printer to OctoEverywhere as well as the state of the App Connection.
+    3) Provides the local IP of the printer for easy local discovery.
+    4) Provides OctoEveryhwere limits for the printer.
+4) [OctoEverywhere OctoPrint Plugin Local API](App-Local-Plugin-API.md) 
+    1) Provides detection of if the OctoEverywhere plugin is installed in OctoPrint.
+    2) Provides access to the OctoEverywhere Printer ID, which allows your app to identify the printer specifically to the OctoEverywhere service.
 
 ### App Connection Life Cycle
 
@@ -46,19 +55,33 @@ If you chose to use enhanced security, you will need to add **either** the basic
 
 The authentication type is specified at the start of an App Connection Portal flow. For details see the [App Portal Integration](App-Portal-Integration.md) page.
 
-### Give Me Feedback!
-
-This entire thing was created for you, the developer, to make your life easier. If there are any changes or tweaks I can make to anything in this process, please let me know.
-
 ### Sounds Great! Let's Integrate!
 
-#### Step 1 - Integrate the Portal
+#### Step 1 - Integrate the App Connection Portal
 
-For all-of-the-details-you-could-ever-want about the portal integration, [look here](App-Portal-Integration.md).
+**Integration Time:** ~3 Hours
+
+To create a new App Connection, you must use the App Connection Portal. This easy to integrate portal provides a great user flow and easily allows users connect printers to your app! 
+
+[Get started with the App Connection Portal.](App-Portal-Integration.md)
 
 #### Step 2 - (optional) - Integrate with OctoEverywhere APIs
 
+**Integration Time:** ~2 Hours
+
 The OctoEverywhere App APIs give you access to real-time details for a printer once it has been setup via the portal. This information can be used to make sure the App Connection is still valid, check if the printer is connected to OctoEverywhere, get the printer's local IP address, and get user usage limits. 
  
-For all-of-the-details-you-could-ever-want about the poral integration, [look here](App-OctoEverywhere-API.md).
+[Get started with the OctoEverywhere App Connection APIs](App-OctoEverywhere-API.md).
+
+#### Step 3 - (optional) - Integrate with the local plugin APIs
+
+**Integration Time:** ~1 Hour
+
+The OctoEverywhere plugin installed in OctoPrint has a simple API that allows detection of it the plugin is installed and basic information. Gathering this information and sending it to the service when using the App Connection Portal can make an even better user experience. 
+ 
+[Get started with the OctoEverywhere plugin local APIs](App-Local-Plugin-API.md).
+
+### Give Me Feedback!
+
+This entire thing was created for you, the developer, to make your life easier. If there are any changes or tweaks I can make to anything in this process, please let me know.
 

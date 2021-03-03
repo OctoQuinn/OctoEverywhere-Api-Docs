@@ -2,7 +2,7 @@
 
 The OctoEverywhere App API allows apps to get information from the OctoEverywhere service relating to an existing App Connection they have established.
 
-Right now the information that can be queried is limited, but it can be expanded in the future. If there's any functionatliy of information you would like to see added to better your app, please reachout and we can discuss it. 
+Right now the information that can be queried is limited, but it can be expanded in the future. If there's any functionality of information you would like to see added to better your app, please reach out and we can discuss it. 
 
 ### The Info API
 
@@ -22,7 +22,7 @@ If your app can't connect to the printer from the App Connection URL, it's helpf
 2) The App Connection is **valid** and the printer **isn't** connected to OctoEverywhere.
 3) The App Connection is **no longer valid**.
 
-You can determin the state based on the GET return type and the returned JSON body.
+You can determine the state based on the GET return type and the returned JSON body.
 
 #### Real-Time Printer
 
@@ -31,9 +31,9 @@ Real-time information includes the printer's connection status to OctoEverywhere
 
 #### User Limit Information
 
-It can be helpful for your app to know the limiitations of the user's account to handle errors when limits are hit. Examples of user limitations are:
+It can be helpful for your app to know the limitations of the user's account to handle errors when limits are hit. Examples of user limitations are:
 
-1) Max size of an uploaded or downloaed file
+1) Max size of an uploaded or downloaded file
 2) Max webcam stream length
 3) Limit of back to back webcam streams
 
