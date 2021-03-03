@@ -17,9 +17,9 @@ An App Connection is a 3rd party app integration with OctoEverywhere that allows
 -	A full secure managed connection to OctoPrint. You can choose domain name security, basic http auth, or Bearer tokens for added security. 
 -	OctoEverywhere app APIs that allow you to query information about the printer from OctoEverywhere, including it’s current local IP, it’s connection state to OctoEverywhere, and the user’s current limits.
 
-### What Options Do I Have For Integration?
+### What Integration Options Do I Have?
 
-App Connections currently offer four integration points:
+App Connections currently offer four easy integration points:
 
 1) The App Connection - Gives you a secure and unique hostname to connect to your user's printer from anywhere.
 2) [The App Connection Portal](App-Portal-Integration.md) - An "OAuth style" OctoEverywhere hosted portal developers can leverage for quick and easy App Connection creation.
