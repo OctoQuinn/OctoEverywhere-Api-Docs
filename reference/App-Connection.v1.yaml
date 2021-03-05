@@ -21,8 +21,8 @@ paths:
         #### **authType**
         The authentication type determines what type of auth will be required for this app connection. Authentication types are discussed on the [App Connection Overview](../docs/App-Connection-Overview.md) page. There are two valid values:
 
-        1) `basic`
-            1) **NOT RECOMENDED** - Should only be used if you can't support basic http auth or a bearer token. An App Connection using basic auth will rely on only the unique subdomian to keep the connection secure.
+        1) `simple`
+            1) **NOT RECOMENDED** - Should only be used if you can't support basic http auth or a bearer token. An App Connection using simple auth will rely on only the unique subdomian to keep the connection secure.
         2) `enhanced`
             1) **RECOMENDED** - The App Connection will require a http auth header with either http basic or a bearer token forall http and websocket connections.
 

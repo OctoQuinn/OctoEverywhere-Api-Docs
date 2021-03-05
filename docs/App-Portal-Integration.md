@@ -53,7 +53,7 @@ https://octoeverywhere.com/appportal/v1/
 
 All of the required and optional GET parameters can be found in the [API doc for Starting An App Portal.](../reference/App-Connection.v1.yaml/paths/~1appportal~1v1/get)
 
-Example: https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=basic
+Example: https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=simple
 
 ### Handling Portal Completion
 
