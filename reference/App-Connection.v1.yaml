@@ -26,7 +26,7 @@ paths:
         2) `enhanced`
             1) **RECOMENDED** - The App Connection will require a http auth header with either http basic or a bearer token forall http and websocket connections.
 
-        #### **printerId**
+        #### **printerId** - optional
 
         If specified, this is the OctoEverywhere Printer ID the user is trying to connect to.
 
@@ -34,9 +34,13 @@ paths:
 
         If your app has local access to the printer already, you can query the Printer ID from the OctoEverywhere OctoPrint plugin. Simply make a GET request to `http://<local OctoPrint IP>/api/plugin/octoeverywhere` and parse the resulting JSON.
 
-        #### **returnUrl**
+        #### **returnUrl** - optional
 
         If specified, the URL-encoded return URL will overwrite the default return URL. The return url is the page the portal will navigate to when either the process completed or ended in an error. The returned GET parameters will be appended on the end of the URL.
+
+        #### **appLogoUrl** - optional
+
+        If specified, this app logo image will be shown in the UI. The image URL must be URL encoded. The image will be displayed in a 70x70px square. Logos with circular logos with transparent backgrounds look best.
       parameters:
         - schema:
             type: string
@@ -61,9 +65,20 @@ paths:
           in: query
           name: printerId
           description: 'If specified, this is the user''s OctoEverywhere Printer ID they are trying to connect to.'
+        - schema:
+            type: string
+          in: query
+          name: appLogoUrl
+          description: 'If specified, this is a URL to the app''s logo. The URL must be URL encoded.'
       responses:
         '200':
           description: The App Connection portal has started successfully.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: object
+              properties: {}
   /appportal/v1/complete:
     get:
       summary: Your GET endpoint
