@@ -29,10 +29,12 @@ paths:
                     signUpDate: '2019-08-24'
         '400':
           description: The App Token was missing from the body or header.
-        '401':
-          description: Unauthorized
+        '402':
+          description: 'The owner''s account is no longer a supporter. If the account is upgraded to supporter status again, this connection will become valid once again.'
         '404':
-          description: 'The App Connection is no longer valid or never existed. This can happen if the user deletes the printer from their account, deletes their account, revokes the App Connection, or downgrades from a supporter role.'
+          description: The App Token is invlaid and no App Connection could be found to match it.
+        '410':
+          description: The App Connection has been revoked by the user and will never be valid again.
       operationId: get-users-userId
       description: |-
         To get information about an App Connection, you must set the `AppToken` header with the API Token returned from the App Connection Portal.

@@ -40,7 +40,7 @@ paths:
 
         #### **appLogoUrl** - optional
 
-        If specified, this app logo image will be shown in the UI. The image URL must be URL encoded. The image will be displayed in a 70x70px square. Logos with circular logos with transparent backgrounds look best.
+        If specified, this app logo image will be shown in the UI. The image URL must be URL encoded. The image will be displayed in a 100x100px square. Logos with circular solid backgrounds and transparent corners look best.
       parameters:
         - schema:
             type: string
