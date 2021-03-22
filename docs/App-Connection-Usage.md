@@ -26,7 +26,7 @@ There are only a few special things you must consider when making calls using th
 
 OctoEverywhere needs to express connection errors, but it can't use HTTP status codes that might overlap what OctoPrint is trying to use. For that reason, we define custom error codes that your app can use to identify errors. If any of the following error codes are returned when your app is making a query to OctoPrint through OctoEverywhere, your app can know there was a problem in OctoEverywhere's connection to the printer.
 
-**Note:** For consientcy, the same error codes are for the [OctoEverywhere App Connection API.]((App-OctoEverywhere-API.md))
+**Note:** For consientcy, the same error codes are for the [OctoEverywhere App Connection API.](App-OctoEverywhere-API.md)
 
 - **600** - **Server Error / Unknown Error**
   - *Temporary* - Something went wrong, try again later.
