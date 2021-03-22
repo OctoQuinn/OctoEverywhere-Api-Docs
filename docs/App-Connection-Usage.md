@@ -20,13 +20,13 @@ There are only a few special things you must consider when making calls using th
 2) There's a special subset of error codes that OctoEverywhere will return if there are issues with the App Connection or issues with communication to the OctoPrint instance. These error codes are described below.
 3) Handle the special  error codes listed below with UI to the user, things like if the printer is offline, if the App Connection is revoked, or if the user's account is no longer a OctoEverywhere supporter.
 4) Handle switching between locally connecting to OctoPrint when it's available and using the App Connection when it's not.
-5) Handle some of the special limits OctoEverywhere has, like webcam streaming time limits, webcam back to back streaming limits, and file upload/download size limits. [These limits can be queried using this OctoEverywhere API.](App-OctoEverywhere-API.md)
+5) Handle some of the special limits OctoEverywhere has, like webcam streaming time limits, webcam back to back streaming limits, and file upload/download size limits. [These limits can be queried using the OctoEverywhere App Connection API.](App-OctoEverywhere-API.md)
 
-#### OctoEverywhere Error Codes
+#### OctoEverywhere Custom Error Codes
 
 OctoEverywhere needs to express connection errors, but it can't use HTTP status codes that might overlap what OctoPrint is trying to use. For that reason, we define custom error codes that your app can use to identify errors. If any of the following error codes are returned when your app is making a query to OctoPrint through OctoEverywhere, your app can know there was a problem in OctoEverywhere's connection to the printer.
 
-**Note:** For consientcy, these same error codes are 
+**Note:** For consientcy, the same error codes are for the [OctoEverywhere App Connection API.]((App-OctoEverywhere-API.md))
 
 - **600** - **Server Error / Unknown Error**
   - *Temporary* - Something went wrong, try again later.

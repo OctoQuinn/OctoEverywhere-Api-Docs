@@ -4,7 +4,7 @@ The OctoEverywhere App API allows apps to get information from the OctoEverywher
 
 Right now the information that can be queried is limited, but it can be expanded in the future. If there's any functionality of information you would like to see added to better your app, please reach out and we can discuss it. 
 
-### The Info API
+### The App Connection Info API
 
 [Look here to find details on how to call the API and what it returns.](../reference/App-Connection-API.v1.yaml/paths/~1api~1appconnection~1info/get)
 
@@ -16,13 +16,13 @@ The `info` API returns you all kinds of good stuff about the current state of th
 
 #### App Connection State
 
-If your app can't connect to the printer from the App Connection URL, it's helpful to know why. Using the `info` API you can determine the state of the App Connection, which can be one of three states.
+If your app can't connect to the printer from the App Connection URL, it's helpful to know why. Using the `info` API you can determine the state of the App Connection, which can be one of three states:
 
 1) The App Connection is **valid** and the printer **is** connected OctoEverywhere.
-2) The App Connection is **valid** and the printer **isn't** connected to OctoEverywhere.
+2) The App Connection is **valid** and the printer **is not** connected to OctoEverywhere.
 3) The App Connection is **no longer valid**.
 
-You can determine the state based on the GET return type and the returned JSON body.
+You can determine the state based on the HTTP stauts code and the returned JSON body. See the API defintion for details.
 
 #### Real-Time Printer
 

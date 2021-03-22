@@ -40,6 +40,9 @@ paths:
         To get information about an App Connection, you must set the `AppToken` header with the API Token returned from the App Connection Portal.
 
         To figure out the App Connection and printer's state, you can use a combination of the API return type as well as the `IsOnline` flag in the resposne body. 
+
+        **Note! There are some HTTP return codes in the 6xx range!** These are custom OctoEverywhere HTTP status codes that are used for the App Connection relay system. We share the same custom status codes here to keep things consistent. 
+        [For details on the custom status codes, see this page.](../docs/App-Connection-Usage.md)
       parameters:
         - schema:
             type: string
