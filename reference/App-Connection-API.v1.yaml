@@ -28,20 +28,26 @@ paths:
                     emailVerified: true
                     signUpDate: '2019-08-24'
         '400':
-          description: The App Token was missing from the body or header.
-        '402':
-          description: 'The owner''s account is no longer a supporter. If the account is upgraded to supporter status again, this connection will become valid once again.'
-        '404':
-          description: The App Token is invlaid and no App Connection could be found to match it.
-        '410':
-          description: The App Connection has been revoked by the user and will never be valid again.
+          description: No App Token was found in the body or header.
+        '600':
+          description: Temporary Issue - Server Error / Unknown Error
+        '601':
+          description: Temporary Issue - Printer is Not Connected To OctoEverywhere
+        '602':
+          description: Temporary - OctoEverywhere's Connection to OctoPrint Timed Out.
+        '603':
+          description: Permanent Issue - App Connection Not Found For The Given AppToken
+        '604':
+          description: Permanent - App Connection Revoked/Expired
+        '605':
+          description: Temporary - App Connection Owner's Account Is No Longer A Supporter.
       operationId: get-users-userId
       description: |-
         To get information about an App Connection, you must set the `AppToken` header with the API Token returned from the App Connection Portal.
 
         To figure out the App Connection and printer's state, you can use a combination of the API return type as well as the `IsOnline` flag in the resposne body. 
 
-        **Note! There are some HTTP return codes in the 6xx range!** These are custom OctoEverywhere HTTP status codes that are used for the App Connection relay system. We share the same custom status codes here to keep things consistent. 
+        **Note! There are some HTTP status codes in the 6xx range!** These are custom OctoEverywhere HTTP status codes that are used for the App Connection relay system. We share the same custom status codes here to keep things consistent. 
         [For details on the custom status codes, see this page.](../docs/App-Connection-Usage.md)
       parameters:
         - schema:
