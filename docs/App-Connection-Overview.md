@@ -59,13 +59,21 @@ The authentication type is specified at the start of an App Connection Portal fl
 
 #### Step 1 - Integrate the App Connection Portal
 
-**Integration Time:** ~3 Hours
+**Integration Time:** ~1 Hour
 
 To create a new App Connection, you must use the App Connection Portal. This easy to integrate portal provides a great user flow and easily allows users connect printers to your app! 
 
 [Get started with the App Connection Portal.](App-Portal-Integration.md)
 
-#### Step 2 - (optional) - Integrate with OctoEverywhere APIs
+#### Step 2 - Use The App Connection To Talk To OctoPrint
+
+**Integration Time:** ~1 Hour
+
+Once you have the App Connection created, use it to talk to OctoPrint!
+ 
+[Get started with usage of the App Connection](App-Connection-Usage.md).
+
+#### Step 3 - (optional) - Integrate with OctoEverywhere APIs
 
 **Integration Time:** ~2 Hours
 
@@ -73,7 +81,7 @@ The OctoEverywhere App APIs give you access to real-time details for a printer o
  
 [Get started with the OctoEverywhere App Connection APIs](App-OctoEverywhere-API.md).
 
-#### Step 3 - (optional) - Integrate with the local plugin APIs
+#### Step 4 - (optional) - Integrate with the local plugin APIs
 
 **Integration Time:** ~1 Hour
 

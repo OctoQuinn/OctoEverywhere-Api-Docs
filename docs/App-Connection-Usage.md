@@ -8,7 +8,9 @@ The App Connection acts as a stand in for any request you would make to OctoPrin
 
 **Note:** You should always use `https` when making requests to OctoEverywhere to keep the user's data secure.
 
-Every part of the http request will be relayed to OctoPrint, including the headers, the body, and the HTTP method. All parts of the response from OctoPrint will be returned, including the headers, the body, and the HTTP status code. The OctoEverywhere relay system supports basic http calls, file download / upload, webcam streaming, and websocket connections.
+Every part of the HTTP request will be relayed to OctoPrint, including the headers, the body, and the HTTP method. All parts of the response from OctoPrint will be returned, including the headers, the body, and the HTTP status code. The OctoEverywhere relay system supports basic HTTP calls, file download / upload, webcam streaming, and websocket connections.
+
+For the most part, all your app needs to do is replace the local IP address with the App Connection hostname for any OctoPrint communication, and it will just work 99% of the time.
 
 #### OctoEverywhere Special Considerations
 
@@ -16,10 +18,15 @@ There are only a few special things you must consider when making calls using th
 
 1) If your app connection is setup to use authentication (which is recommended) you must include *either* the basic HTTP auth header or the Bearer auth header *for all requests*. This includes websocket requests and webcam streaming requests.
 2) There's a special subset of error codes that OctoEverywhere will return if there are issues with the App Connection or issues with communication to the OctoPrint instance. These error codes are described below.
+3) Handle the special  error codes listed below with UI to the user, things like if the printer is offline, if the App Connection is revoked, or if the user's account is no longer a OctoEverywhere supporter.
+4) Handle switching between locally connecting to OctoPrint when it's available and using the App Connection when it's not.
+5) Handle some of the special limits OctoEverywhere has, like webcam streaming time limits, webcam back to back streaming limits, and file upload/download size limits. [These limits can be queried using this OctoEverywhere API.](App-OctoEverywhere-API.md)
 
 #### OctoEverywhere Error Codes
 
 OctoEverywhere needs to express connection errors, but it can't use HTTP status codes that might overlap what OctoPrint is trying to use. For that reason, we define custom error codes that your app can use to identify errors. If any of the following error codes are returned when your app is making a query to OctoPrint through OctoEverywhere, your app can know there was a problem in OctoEverywhere's connection to the printer.
+
+**Note:** For consientcy, these same error codes are 
 
 - **600** - **Server Error / Unknown Error**
   - *Temporary* - Something went wrong, try again later.
@@ -39,4 +46,4 @@ OctoEverywhere needs to express connection errors, but it can't use HTTP status 
 - **605** - **App Connection Owner's Account Is No Longer A Supporter.**
   - *Temporary* - The owner account is no longer an OctoEverywhere supporter. If the account is upgraded to supporter status again, this App Connection will continue working as-is.
 - **606** - **Invalid App Connection Credentials**
-  - *Permanent* - The App Connection requires basic http auth or a Bearer token. The credentials where either missing or incorrect.
+  - *Permanent* - The App Connection requires basic http auth or a Bearer token. The credentials were either missing or incorrect.
