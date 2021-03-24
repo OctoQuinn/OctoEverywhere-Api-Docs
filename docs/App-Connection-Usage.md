@@ -48,6 +48,6 @@ OctoEverywhere needs to express connection errors, but it can't use HTTP status 
 - **606** - **Invalid App Connection Credentials**
   - *Permanent* - The App Connection requires basic http auth or a Bearer token. The credentials were either missing or incorrect.
 - **607** - **File Download Limit Exceeded**
-  - *Permanent* - The HTTP response body was exceeded the max size for this user's account. The per file limit for this user can be found using the [App Connection Info Api](App-OctoEverywhere-API.md)
+  - *Permanent* - The HTTP **response** body was exceeded the max size for this user's account. The per file limit for this user can be found using the [App Connection Info Api](App-OctoEverywhere-API.md)
 - **608** - **File Upload Limit Exceeded**
-  - *Permanent* - The HTTP request body was exceeded the max size for this user's account. The per file limit for this user can be found using the [App Connection Info Api](App-OctoEverywhere-API.md)
+  - *Permanent* - The HTTP **request** body was exceeded the max size for this user's account. The per file limit for this user can be found using the [App Connection Info Api](App-OctoEverywhere-API.md)
