@@ -51,3 +51,5 @@ OctoEverywhere needs to express connection errors, but it can't use HTTP status 
   - *Permanent* - The HTTP **response** body was exceeded the max size for this user's account. The per file limit for this user can be found using the [App Connection Info Api](App-OctoEverywhere-API.md)
 - **608** - **File Upload Limit Exceeded**
   - *Permanent* - The HTTP **request** body was exceeded the max size for this user's account. The per file limit for this user can be found using the [App Connection Info Api](App-OctoEverywhere-API.md)
+- **609** - **Webcam Back to Back Limit Exceeded**
+  - *Temporary* - The user has viewed the webcam too many times per a time window. This time limits can be found in the App OctoEverywhere API.
