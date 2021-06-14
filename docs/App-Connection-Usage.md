@@ -28,7 +28,7 @@ OctoEverywhere needs to express connection errors, but it can't use HTTP status 
 
 **Note:** For consientcy, the same error codes are for the [OctoEverywhere App Connection API.](App-OctoEverywhere-API.md)
 
-- **600** - **Server Error / Unknown Error**
+- **600** - **Server Error / Plugin Error / Unknown Error**
   - *Temporary* - Something went wrong, try again later.
 - **601** - **Printer is Not Connected To OctoEverywhere**
   - *Temporary* - Indicates the OctoPrint instance isn't currently connected to OctoEverywhere.
