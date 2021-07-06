@@ -19,12 +19,9 @@ paths:
         The App ID is a string that's assigned to your app by OctoEverywhere. This is used to track which App Connections are created by which apps, and also used to add your app name to the UI. Please contact Quinn if you need an App ID assigned. 
 
         #### **authType**
-        The authentication type determines what type of auth will be required for this app connection. Authentication types are discussed on the [App Connection Overview](../docs/App-Connection-Overview.md) page. There are two valid values:
+        The authentication type determines what type of auth will be required for this app connection. Authentication types are discussed on the [App Connection Overview](../docs/App-Connection-Overview.md) page.
 
-        1) `simple`
-            1) **NOT RECOMENDED** - Should only be used if you can't support basic http auth or a bearer token. An App Connection using simple auth will rely on only the unique subdomian to keep the connection secure.
-        2) `enhanced`
-            1) **RECOMENDED** - The App Connection will require a http auth header with either http basic or a bearer token forall http and websocket connections.
+        **7/5/2021 Update** - Due to the remote nature of apps and to ensure all OctoEverywhere users have a secure connection to their printers, we now require either basic http auth or bearer tokens. This header isn't required since the value will always be set to `enhanced`
 
         #### **printerId** - optional
 
@@ -47,12 +44,6 @@ paths:
           in: query
           name: appId
           description: The OctoEverywhere assigned id for your app.
-          required: true
-        - schema:
-            type: string
-          in: query
-          name: authType
-          description: The authentication type you want the app connection to use
           required: true
         - schema:
             type: string

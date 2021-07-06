@@ -10,7 +10,7 @@ The App Connection Portal has the following goals:
 
 ### Cool! What does it look like?
 
-[Give it a try!](https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=none) 
+[Give it a try!](https://octoeverywhere.com/appportal/v1/?appid=devtest) 
 
 **Note:** The experience is optimized for mobile / tablet layouts.
 
@@ -53,15 +53,28 @@ https://octoeverywhere.com/appportal/v1/
 
 All of the required and optional GET parameters can be found in the [API doc for Starting An App Portal.](../reference/App-Connection.v1.yaml/paths/~1appportal~1v1/get)
 
-Example: https://octoeverywhere.com/appportal/v1/?appid=devtest&authType=simple
+Example: https://octoeverywhere.com/appportal/v1/?appid=devtest
 
 ### Handling Portal Completion
 
 On successful or failure completion, the portal will navigate to `appportal/v1/complete` or the specified `returnUrl` with the resulting GET parameters. Your app should monitor the web view's navigation and when it sees the completion URL handle the portal result.
 
-All of the return GET parameters can be found in the [API doc for the App Portal Completion URL.](../reference/App-Connection.v1.yaml/paths/~1appportal~1v1/get)
+The returned GET parameters can be parsed by your app and stored to use the app connection.
 
-Remember that the `appApiToken` and `auth*` parameters will only be returned this one time and cannot be retrieved again. If you lose them, you must make a new App Connection.
+Remember that the `appApiToken` and `auth*` parameters will only be returned this one time and cannot be retrieved again. If you lose them, you must make a new App Connection.\
+
+#### Completion GET Params
+
+- `success` (boolean) - Indicates if the App Connection Portal was successful or not.
+- `id` (url endoded string) - The newly created App Connection Id. This is the unique id for the App Connection made from this portal process. It should be stored to use to access the printer and the OctoEverywhere APIs.
+- `url` (url encoded string) - This is the substute URL your app can use to access OctoPrint APIs. Remember that the whichever auth header you use must be set on all requests for access.
+- `appApiToken` (url encoded string) - This is the OctoEverywhere API access token for this app connection. The OctoEverywhere API allows you to query information about the App Connection status and the printer's connection status.
+- `printername` (url encoded string) - This is the user assigned name of this printer.
+- `userPrinterAccessUrl` - (url encoded string) - This is a user firend URL the user can use to access their printer. This is returned so it can be shown in app UI for the user's reference, but this URL will not work for the app at all since it doesn't accept the app's auth.
+- `printerLastKnownLocalIp` (optional - string) - If known, this is the last local IP of the printer. This can be used for local printer discovery.
+- `authbasichttpuser` (url encoded string) - The basic http user name for the App Connection.
+- `authbasichttppassword` (url encoded string) - The basic http password for the App Connection.
+- `authBearerToken` (url encoded string) - The bearer token for the App Connection.
 
 <!-- ### Cool Right? Let's Talk Intergration!
 
